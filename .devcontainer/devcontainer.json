@@ -6,15 +6,23 @@
       "version": "22"
     }
   },
-  "forwardPorts": [5173],
+  "forwardPorts": [5173, 8080, 8081],
   "portsAttributes": {
     "5173": {
       "label": "Vite Dev Server",
       "onAutoForward": "openBrowser"
+    },
+    "8080": {
+      "label": "Vite Dev Server (fallback)",
+      "onAutoForward": "openBrowser"
+    },
+    "8081": {
+      "label": "Vite Dev Server (fallback)",
+      "onAutoForward": "openBrowser"
     }
   },
   "postCreateCommand": "npm install --ignore-scripts && node node_modules/esbuild/install.js",
-  "postStartCommand": "npm run dev -- --host 0.0.0.0",
+  "postStartCommand": "NODE_OPTIONS=--experimental-global-webcrypto npm run dev -- --host 0.0.0.0 --port 5173",
   "customizations": {
     "vscode": {
       "extensions": [
