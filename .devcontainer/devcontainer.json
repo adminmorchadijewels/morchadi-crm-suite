@@ -13,7 +13,7 @@
       "onAutoForward": "openBrowser"
     }
   },
-  "postCreateCommand": "npm install --ignore-scripts && npm rebuild esbuild",
+  "postCreateCommand": "npm install --ignore-scripts && node node_modules/esbuild/install.js",
   "postStartCommand": "npm run dev -- --host 0.0.0.0",
   "customizations": {
     "vscode": {
